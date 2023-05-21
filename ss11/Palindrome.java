@@ -6,29 +6,29 @@ import java.util.Stack;
 
 public class Palindrome {
     public static void main(String[] args) {
-        Queue<String> stringQueue = new LinkedList<>();
+        Queue<String> strQueue = new LinkedList<>();
 
-        Stack<String> stringStack = new Stack<>();
+        Stack<String> strStack = new Stack<>();
 
         String str = "Able was I ere I saw elbA";
 
         String[] work = str.split("");
 
         for (String s : work) {
-            stringQueue.add(s);
-            stringStack.add(s);
+            strQueue.add(s);
+            strStack.add(s);
         }
 
         int count = 0;
         for (int i = 0; i < work.length; i++) {
-            if (stringStack.pop().equals(stringQueue.poll())) {
+            if (strStack.pop().equals(strQueue.poll())) {
                 count++;
             }
         }
         if (count == work.length) {
-            System.out.println(str + ": la chuoi palindrome");
+            System.out.println(str + ": is palindrome");
         } else {
-            System.out.println(str + ": khong phai la chuoi palindrome");
+            System.out.println(str + ": is not palindrome");
         }
     }
 }
