@@ -2,9 +2,12 @@ package ss11;
 
 import java.util.Stack;
 
+/**
+ * Class chỉ mang tính chất so sánh ngoặc chưa test khoảng trắng
+ */
 public class BracketTest {
     public static void main(String[] args) {
-        String bracketString = "s * (s – a) * (s – b * (s – c)  ";
+        String bracketString = "s * (s – a) * (s – b) * (s – c)  ";
         boolean result = checkBracket(bracketString);
         System.out.println(result);
     }

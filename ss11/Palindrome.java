@@ -4,6 +4,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
+/**
+ * Class chỉ mang tính chất so sánh chứ chưa tìm thuật toán từ có nghĩa
+ */
 public class Palindrome {
     public static void main(String[] args) {
         Queue<String> strQueue = new LinkedList<>();

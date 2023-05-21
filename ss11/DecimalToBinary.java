@@ -4,6 +4,12 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class DecimalToBinary {
+    /**
+     * author Minh c0323g1
+     *
+     * @param stack dãy nhị phân chưa đươc sắp xếp
+     * @return đẩy ngược ra lại rồi mới in
+     */
     public static Stack<Integer> reverseStack(Stack<Integer> stack) {
         Stack<Integer> newStack = new Stack<>();
         int length = stack.size();
