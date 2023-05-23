@@ -15,7 +15,7 @@ public class MyList<E> {
         if (capacity > 0) {
             elements = new Object[DEFAULT_CAPACITY];
         } else {
-            throw new IllegalArgumentException("Cappacity" + capacity);
+            throw new IllegalArgumentException("Capacity" + capacity);
         }
     }
 
