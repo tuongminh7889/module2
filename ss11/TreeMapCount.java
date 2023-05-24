@@ -1,27 +1,34 @@
 package ss11;
 
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeMap;
 
 public class TreeMapCount {
-    public void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("In put you Texts :");
-        String strInput = scanner.nextLine().toUpperCase();
-        String[] strArr = strInput.split(" ");
-        String[] map = new String[0];
-        String[] keys = new String[strArr.length];
-        int countKey;
-        for (int i = 0; i < keys.length; i++) {
-            countKey = 0;
-            for (int j = 0; j < strArr.length; j++) {
-                if (strArr[j]  == (keys[i]) ) {
-                    countKey++;
-                } else {
-                    keys[i] = strArr[j];
-                    countKey = 1;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input String");
+        String stringInput = sc.nextLine();
+        Map<String, Integer> treeMap = new TreeMap<>();
+        String[] arrayString = stringInput.toLowerCase().split("");
+        int valueCount;
+        for (String s : arrayString) {
+            valueCount = 0;
+            if (s.equals(" ")) {
+                continue;
+            }
+            for (String value : arrayString) {
+                if (s.equals(value)) {
+                    valueCount++;
                 }
-            }map[i] = keys[i] + countKey;
+            }
+            treeMap.put(s, valueCount);
         }
-        System.out.println(map);
+
+        Set<String> key = treeMap.keySet();
+        for (String k : key) {
+            System.out.println("key: " + k + ", value: " + treeMap.get(k));
+        }
     }
 }
