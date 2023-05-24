@@ -15,9 +15,9 @@ public class MainController {
             System.out.print("-Nhập để chọn chức năng-\n" +
                     "1. Hiển thị danh sách sản phẩm\n" +
                     "2. Thêm sản phẩm vào danh sách\n" +
-                    "3. Xoá sản phẩm\n" +
-                    "4. Tìm kiếm sản phẩm\n" +
-                    "5. Sửa thông tin sản phẩm\n" +
+                    "3. Sửa thông tin sản phẩm\n" +
+                    "4. Xoá sản phẩm\n" +
+                    "5. Tìm kiếm sản phẩm\n" +
                     "6. Sắp xếp sản phẩm theo giá\n" +
                     "0. Thoát chương trình\n" +
                     "Chọn chức năng số : ");
@@ -33,13 +33,13 @@ public class MainController {
                     productService.add();
                     break;
                 case 3:
-                    productService.remove();
+                    productService.editProduct();
                     break;
                 case 4:
-                    productService.searchProduct();
+                    productService.remove();
                     break;
                 case 5:
-                    productService.editProduct();
+                    productService.searchProduct();
                     break;
                 case 6:
                     productService.sortByPrice();

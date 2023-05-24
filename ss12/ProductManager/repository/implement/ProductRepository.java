@@ -20,15 +20,6 @@ public class ProductRepository implements IProductRepository {
         return productList;
     }
 
-    @Override
-    public Product getById(String checkId) {
-        for (Product product : productList) {
-            if (product.getId().equals(checkId)) {
-                return product;
-            }
-        }
-        return null;
-    }
 
     @Override
     public void add(Product newProduct) {
@@ -89,7 +80,15 @@ public class ProductRepository implements IProductRepository {
             }
         });
     }
-
+    @Override
+    public Product getById(String checkId) {
+        for (Product product : productList) {
+            if (product.getId().equals(checkId)) {
+                return product;
+            }
+        }
+        return null;
+    }
     @Override
     public void setProduct(Product product, String newName, float newPrice, int newQuantity, String newDetails) {
         for (int i = 0; i < productList.size(); i++) {
