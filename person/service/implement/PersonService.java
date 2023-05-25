@@ -28,13 +28,28 @@ public class PersonService implements IPersonService {
         switch (choice) {
             case 1:
                 System.out.print("Nhập ID: ");
+
                 int idStudent = Integer.parseInt(scanner.nextLine());
                 System.out.print("Nhập Tên: ");
                 String nameStudent = scanner.nextLine();
                 System.out.print("Nhập Ngày Tháng Năm Sinh: ");
                 String birthdayStudent = scanner.nextLine();
-                System.out.print("Nhập Giới Tính: ");
-                boolean genderStudent = Boolean.parseBoolean(scanner.nextLine());
+                boolean genderStudent = false;
+                while (true) {
+                    System.out.print("Nhập giới tính học viên\n" +
+                            "1. Nam\n" +
+                            "Khác 1. Nữ");
+                    try {
+                        int chose = Integer.parseInt(scanner.nextLine());
+
+                        if (chose == 1) {
+                            genderStudent = true;
+                        }
+                        break;
+                    } catch (NumberFormatException numberFormatException) {
+                        System.out.println("Nhập sai");
+                    }
+                }
                 System.out.print("Nhập Lớp ");
                 String classes = scanner.nextLine();
                 System.out.print("Nhập Điểm ");
@@ -49,8 +64,22 @@ public class PersonService implements IPersonService {
                 String nameTeacher = scanner.nextLine();
                 System.out.print("Nhập Ngày Tháng Năm Sinh: ");
                 String birthdayTeacher = scanner.nextLine();
-                System.out.print("Nhập Giới Tính: ");
-                boolean genderTeacher = Boolean.parseBoolean(scanner.nextLine());
+                boolean genderTeacher = false;
+                while (true) {
+                    System.out.print("Nhập giới tính học viên\n" +
+                            "1. Nam\n" +
+                            "Khác 1. Nữ");
+                    try {
+                        int chose = Integer.parseInt(scanner.nextLine());
+
+                        if (chose == 1) {
+                            genderTeacher = true;
+                        }
+                        break;
+                    } catch (NumberFormatException numberFormatException) {
+                        System.out.println("Nhập sai");
+                    }
+                }
                 System.out.print("Nhập Chuyên Môn: ");
                 String technique = scanner.nextLine();
                 Person teacher = new Teacher(idTeacher, nameTeacher, birthdayTeacher, genderTeacher, technique);
